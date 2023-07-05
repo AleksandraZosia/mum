@@ -18,3 +18,9 @@
   border-color: transparent;
   cursor: pointer;
 }
+@media (max-width: 420px) {
+  .button {
+    width: 90%;
+    /* position: relative; */
+  }
+}

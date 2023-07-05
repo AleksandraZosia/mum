@@ -27,9 +27,12 @@ export default function Home() {
             <Nav />
           </div>
           <div className={styles.header}>
-            <h1>W każdym dziecku drzemie potencjał</h1>
-            <h2>Pozwól mi pomóc go uwolnić</h2>
-            <Button text={"Zamów darmową konsultację >>"} />
+            <div>
+              {" "}
+              <h1>W każdym dziecku drzemie potencjał</h1>
+              <h2>Pozwól mi pomóc go uwolnić</h2>
+            </div>
+            <Button text={"Zamów darmową konsultację >>"} id={styles.button} />
           </div>
         </div>
         <section className={styles.second} id="therapy">
