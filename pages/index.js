@@ -1,8 +1,46 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const avilablePlans = [
+    {
+      name: "POJEDYNCZE SPOTKANIE",
+      price: 150,
+      benefits: [
+        "Pełna elastyczność",
+        "Umawiane ad-hock",
+        "Płatne po każdej lekcji",
+      ],
+      key: 1,
+    },
+    {
+      name: "PLAN MIESIĘCZNY",
+      price: 120,
+      benefits: [
+        "4 zaplanowane spotkania",
+        "Płatne z góry za miesiąc",
+        "Przygotowany plan nauki",
+      ],
+      key: 2,
+    },
+    {
+      name: "PLAN KWARTALNY",
+      price: 100,
+      benefits: [
+        "12 zaplanowanych spotkań",
+        "Płatne z góry za kwartał lub co miesiąc",
+        "Przygotowany plan nauki",
+      ],
+      key: 3,
+    },
+  ];
+
+  const scrollToView = (e, id) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,58 +50,217 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <div className={styles.first}>
+          <div className={styles.nav}>
+            <Image
+              src="/icon_home.svg"
+              alt="Strona główna"
+              height={21}
+              width={24}
+              className={styles.icon}
+            />
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            <div className={styles.navoptions}>
+              <a onClick={(e) => scrollToView(e, "therapy")}>TERAPIA</a>{" "}
+              <a onClick={(e) => scrollToView(e, "talents")}>TALENTY</a>
+              <a onClick={(e) => scrollToView(e, "about")}>O MNIE</a>
+              <a>KONTAKT</a>
+            </div>
+          </div>
+          <div className={styles.header}>
+            <h1>W każdym dziecku drzemie potencjał</h1>
+            <h2>Pozwól mi pomóc go uwolnić</h2>
+            <button className={styles.button}>Zamów darmową konsultację</button>
+          </div>
         </div>
+        <section className={styles.second} id="therapy">
+          <div className={styles.therapy}>
+            <h2>Terapia</h2>
+            <h4>
+              Mój główny cel to zapewnienie każdemu dziecku równych szans w
+              nauce i rozwoju, pomimo specyficznych wyzwań związanych z
+              neuroróżnorodnością, spektrum autyzmu czy zespołem Aspergera.
+              Pracując z dzieckiem indywidualnie, uwzględniam jego unikalne
+              predyspozycje, zdolności i zainteresowania. Staram się znaleźć
+              metody nauki, które będą dla niego najbardziej efektywne i
+              atrakcyjne.
+            </h4>
+            <h4>
+              Wspieram dziecko w rozwijaniu umiejętności samoorganizacji,
+              radzenia sobie z trudnościami w nauce oraz w budowaniu strategii
+              uczenia.
+            </h4>
+          </div>
+          <div className={styles.proccess}>
+            <h2>Proces naszej współpracy w 3 krokach</h2>
+            <div className={styles.steps}>
+              <div>
+                <Image
+                  src="/step1.svg"
+                  width={180}
+                  height={180}
+                  alt="grafika ozdobna"
+                />
+                <div>
+                  <h3>Krok 1 - konsultacja</h3>
+                  <p>
+                    Pierwszym krokiem naszego spotkania będzie nawiązanie
+                    relacji i budowanie zaufania. W trakcie spotkania
+                    przeprowadzimy test Gallupa, który pozwoli nam odkryć
+                    indywidualne talenty i mocne strony dziecka. Ten test pomoże
+                    mi lepiej poznać dziecko i zrozumieć jak najlepiej rozwijać
+                    jego potencjał.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <Image
+                  src="/step2.svg"
+                  width={180}
+                  height={180}
+                  alt="grafika ozdobna"
+                />
+                <div>
+                  <h3>Krok 2 - dobranie metody nauki</h3>
+                  <p>
+                    Kolejnym etapem terapii jest dobranie optymalnej metody
+                    nauki, uwzględniając wyniki testu Gallupa oraz naturalne
+                    zainteresowania i schematy zachowań. Wykorzystając wyniki
+                    testu, identyfikujemy indywidualne talenty i mocne strony
+                    dziecka. Następnie dostosowuję proces nauki, wykorzystując
+                    te zainteresowania, na przykład przez wprowadzenie elementów
+                    muzycznych.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <Image
+                  src="/step3.svg"
+                  width={180}
+                  height={180}
+                  alt="grafika ozdobna"
+                />
+                <div>
+                  <h3>Krok 3 - wspólna praca</h3>
+                  <p>
+                    Trzecim krokiem w długotrwałym procesie pracy terapeutycznej
+                    z dzieckiem w spektrum autyzmu/aspergera jest wspieranie
+                    dziecka w nauce poza szkołą, umożliwiając mu indywidualne
+                    uczenie się przy wykorzystaniu swoich talentów i
+                    dopasowanych do niego metod.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className={styles.fourth} id="talents">
+          <h2>Talenty</h2>
+          <div className={styles.talents}>
+            <div className={styles.text}>
+              <p>
+                Proces wspólnej nauki rozpoczynam od rozpoznania indywidualnych
+                talentów dziecka. Każde dziecko ma swoje własne niezwykłe
+                talenty. Test mocnych stron, opracowany przez instytut Gallupa,
+                pomaga dzieciom odkryć, nazwać i rozwijać swoje naturalne
+                umiejętności. Sam test stworzony jest z myślą o dzieciach w
+                wieku od 10 do 14 lat, natomiast przeprowadzam go już z
+                8-latkami, które otrzymują przy nim nieco więcej wsparcia.
+              </p>
+              <p>
+                Test odkrywania talentów odbywa się podczas pierwszej, darmowej
+                konsultacji i każde dziecko otrzymuje swój własny raport z
+                opisem swoich mocnych stron. Na kolejnym spotkaniu omawiamy go
+                wraz z rodzicami.
+              </p>
+              <button className={styles.button}>
+                Zamów darmową konsultację
+              </button>
+            </div>
+            <Image
+              src="/cartoon_child.svg"
+              alt="grafika przedstawiająca czytające dziecko"
+              width={352}
+              height={352}
+            />
+          </div>
+        </section>
+        <section className={styles.fifth} id="about">
+          <h2>O mnie</h2>
+          <div className={styles.about}>
+            <Image
+              src="/photo.svg"
+              width={366}
+              height={366}
+              alt="Ewa Żenczykowska-Sawicka"
+            />
+            <p>
+              Nazywam się Ewa Żenczykowska-Sawicka. Przez niemal czterdzieści
+              lat pracowałam jako dyrektor szkoły i nauczycielka. Moja praca nie
+              ogranicza się tylko do sali lekcyjnej - jestem również terapeutką
+              dzieci z diagnozą autyzmu oraz zespołu Aspergera.
+              <br></br>
+              <br></br>
+              Przez wiele lat zajmowałam się rewalidacją i różnymi formami
+              wsparcia w nauce dzieci z tymi specyficznymi potrzebami. Moją
+              misją jest odkrywanie odpowiednich metod nauki, które pomogą tym
+              dzieciom osiągnąć pełen potencjał.
+              <br></br>
+              <br></br>
+              Jestem znana z mojego zaangażowania i zaufania, jakim cieszę się
+              zarówno u uczniów, jak i ich rodziców. Dzięki mojemu doświadczeniu
+              i empatycznej postawie potrafię stworzyć indywidualne programy
+              rewalidacyjne, dopasowane do potrzeb każdego z moich
+              podopiecznych.
+            </p>
+          </div>
+        </section>
+        <section className={styles.sixth} id="prices">
+          <h2>Cennik</h2>
+          <h3>Pierwsze spotkanie konsultacyjne jest darmowe!</h3>
+          <div className={styles.plans}>
+            {avilablePlans.map((plan) => (
+              <div key={plan.key} className={styles.plan}>
+                <h4>{plan.name}</h4>
+                <h2>{plan.price} zł za 90 minut</h2>
+                <div className={styles.benefits}>
+                  {plan.benefits.map((benefit, i) => (
+                    <span key={i}>
+                      <Image
+                        src="/icon-arrow.svg"
+                        alt="dekoracyjna strzałka"
+                        width={27.2}
+                        height={17}
+                      />
+                      {benefit}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className={styles.seventh}>
+          <h2>Umów wizytę</h2>
+          <button className={styles.button}>
+            {"Umów się na konsultację >>>"}
+          </button>
+        </section>
       </main>
 
       <footer className={styles.footer}>
+        <p>Stopka</p>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
