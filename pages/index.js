@@ -81,6 +81,7 @@ export default function Home() {
               alt="grafika przedstawiająca czytające dziecko"
               width={352}
               height={352}
+              id={styles.reading_child}
             />
           </div>
         </section>

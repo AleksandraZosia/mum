@@ -13,3 +13,9 @@
   font-weight: 500;
   line-height: 39px;
 }
+
+@media (max-width: 400px) {
+  .steps {
+    flex-direction: column;
+  }
+}
