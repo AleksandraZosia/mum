@@ -1,0 +1,15 @@
+.steps {
+  display: flex;
+  padding: 0.5rem 0.5rem;
+  color: rgba(66, 55, 85, 1);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  gap: 3rem;
+  text-align: center;
+}
+.steps h3 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 39px;
+}

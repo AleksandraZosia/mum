@@ -1,46 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-
+import Button from "../components/Button";
+import Plans from "../components/Plans";
+import Nav from "../components/Navigation";
+import Steps from "../components/Steps";
 export default function Home() {
-  const avilablePlans = [
-    {
-      name: "POJEDYNCZE SPOTKANIE",
-      price: 150,
-      benefits: [
-        "Pełna elastyczność",
-        "Umawiane ad-hock",
-        "Płatne po każdej lekcji",
-      ],
-      key: 1,
-    },
-    {
-      name: "PLAN MIESIĘCZNY",
-      price: 120,
-      benefits: [
-        "4 zaplanowane spotkania",
-        "Płatne z góry za miesiąc",
-        "Przygotowany plan nauki",
-      ],
-      key: 2,
-    },
-    {
-      name: "PLAN KWARTALNY",
-      price: 100,
-      benefits: [
-        "12 zaplanowanych spotkań",
-        "Płatne z góry za kwartał lub co miesiąc",
-        "Przygotowany plan nauki",
-      ],
-      key: 3,
-    },
-  ];
-
-  const scrollToView = (e, id) => {
-    e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <div className={styles.container}>
       <Head>
@@ -59,18 +24,12 @@ export default function Home() {
               width={24}
               className={styles.icon}
             />
-
-            <div className={styles.navoptions}>
-              <a onClick={(e) => scrollToView(e, "therapy")}>TERAPIA</a>{" "}
-              <a onClick={(e) => scrollToView(e, "talents")}>TALENTY</a>
-              <a onClick={(e) => scrollToView(e, "about")}>O MNIE</a>
-              <a>KONTAKT</a>
-            </div>
+            <Nav />
           </div>
           <div className={styles.header}>
             <h1>W każdym dziecku drzemie potencjał</h1>
             <h2>Pozwól mi pomóc go uwolnić</h2>
-            <button className={styles.button}>Zamów darmową konsultację</button>
+            <Button text={"Zamów darmową konsultację >>"} />
           </div>
         </div>
         <section className={styles.second} id="therapy">
@@ -93,65 +52,7 @@ export default function Home() {
           </div>
           <div className={styles.proccess}>
             <h2>Proces naszej współpracy w 3 krokach</h2>
-            <div className={styles.steps}>
-              <div>
-                <Image
-                  src="/step1.svg"
-                  width={180}
-                  height={180}
-                  alt="grafika ozdobna"
-                />
-                <div>
-                  <h3>Krok 1 - konsultacja</h3>
-                  <p>
-                    Pierwszym krokiem naszego spotkania będzie nawiązanie
-                    relacji i budowanie zaufania. W trakcie spotkania
-                    przeprowadzimy test Gallupa, który pozwoli nam odkryć
-                    indywidualne talenty i mocne strony dziecka. Ten test pomoże
-                    mi lepiej poznać dziecko i zrozumieć jak najlepiej rozwijać
-                    jego potencjał.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <Image
-                  src="/step2.svg"
-                  width={180}
-                  height={180}
-                  alt="grafika ozdobna"
-                />
-                <div>
-                  <h3>Krok 2 - dobranie metody nauki</h3>
-                  <p>
-                    Kolejnym etapem terapii jest dobranie optymalnej metody
-                    nauki, uwzględniając wyniki testu Gallupa oraz naturalne
-                    zainteresowania i schematy zachowań. Wykorzystając wyniki
-                    testu, identyfikujemy indywidualne talenty i mocne strony
-                    dziecka. Następnie dostosowuję proces nauki, wykorzystując
-                    te zainteresowania, na przykład przez wprowadzenie elementów
-                    muzycznych.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <Image
-                  src="/step3.svg"
-                  width={180}
-                  height={180}
-                  alt="grafika ozdobna"
-                />
-                <div>
-                  <h3>Krok 3 - wspólna praca</h3>
-                  <p>
-                    Trzecim krokiem w długotrwałym procesie pracy terapeutycznej
-                    z dzieckiem w spektrum autyzmu/aspergera jest wspieranie
-                    dziecka w nauce poza szkołą, umożliwiając mu indywidualne
-                    uczenie się przy wykorzystaniu swoich talentów i
-                    dopasowanych do niego metod.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <Steps />
           </div>
         </section>
         <section className={styles.fourth} id="talents">
@@ -173,9 +74,7 @@ export default function Home() {
                 opisem swoich mocnych stron. Na kolejnym spotkaniu omawiamy go
                 wraz z rodzicami.
               </p>
-              <button className={styles.button}>
-                Zamów darmową konsultację
-              </button>
+              <Button text={"Zamów darmową konsultację >>"} />
             </div>
             <Image
               src="/cartoon_child.svg"
@@ -218,33 +117,11 @@ export default function Home() {
         <section className={styles.sixth} id="prices">
           <h2>Cennik</h2>
           <h3>Pierwsze spotkanie konsultacyjne jest darmowe!</h3>
-          <div className={styles.plans}>
-            {avilablePlans.map((plan) => (
-              <div key={plan.key} className={styles.plan}>
-                <h4>{plan.name}</h4>
-                <h2>{plan.price} zł za 90 minut</h2>
-                <div className={styles.benefits}>
-                  {plan.benefits.map((benefit, i) => (
-                    <span key={i}>
-                      <Image
-                        src="/icon-arrow.svg"
-                        alt="dekoracyjna strzałka"
-                        width={27.2}
-                        height={17}
-                      />
-                      {benefit}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <Plans />
         </section>
         <section className={styles.seventh}>
           <h2>Umów wizytę</h2>
-          <button className={styles.button}>
-            {"Umów się na konsultację >>>"}
-          </button>
+          <Button text={"Umów się na darmową konsultację >>>"} />
         </section>
       </main>
 
