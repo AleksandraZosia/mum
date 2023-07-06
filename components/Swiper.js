@@ -17,8 +17,8 @@ export default function SimpleSlider({ plans }) {
   return (
     <Slider {...settings}>
       {plans.map((plan) => (
-        <div className={styles.card}>
-          <Plan plan={plan} key={plan.key} />
+        <div className={styles.card} key={plan.key}>
+          <Plan plan={plan} />
         </div>
       ))}
     </Slider>
