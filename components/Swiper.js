@@ -13,6 +13,9 @@ export default function SimpleSlider({ plans }) {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrow: false,
+    centerMode: true,
+    initialSlide: 1,
+    centerPadding: "10%",
   };
   return (
     <Slider {...settings}>

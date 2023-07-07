@@ -186,13 +186,16 @@
   .therapy .talents .header .proccess .about {
     width: 100%;
   }
+  .sixth {
+    padding: 2rem 0;
+  }
   .sixth h3 {
     font-size: 18px;
   }
 
   .swiper {
     display: inherit;
-    margin: 2px 8px;
-    height: 100vh;
+    margin: 2px;
+    height: fit-content;
   }
 }
