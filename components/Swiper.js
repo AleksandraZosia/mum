@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Plan from "../components/Plan";
-import styles from "../styles/Swiper.module.css";
 
 export default function SimpleSlider({ plans }) {
   var settings = {
@@ -20,7 +19,7 @@ export default function SimpleSlider({ plans }) {
   return (
     <Slider {...settings}>
       {plans.map((plan) => (
-        <div className={styles.card} key={plan.key}>
+        <div key={plan.key}>
           <Plan plan={plan} />
         </div>
       ))}

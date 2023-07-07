@@ -198,4 +198,7 @@
     margin: 2px;
     height: fit-content;
   }
+  .seventh {
+    padding: 1rem 0 2rem 0;
+  }
 }
