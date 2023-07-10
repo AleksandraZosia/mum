@@ -11,10 +11,10 @@ export default function SimpleSlider({ plans }) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrow: false,
+    arrows: false,
     centerMode: true,
     initialSlide: 1,
-    centerPadding: "10%",
+    centerPadding: "50px",
   };
   return (
     <Slider {...settings}>

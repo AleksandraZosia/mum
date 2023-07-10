@@ -29,14 +29,25 @@
 }
 @media (max-width: 420px) {
   .plan {
-    margin: 0 30px;
+    width: 275px;
+    height: 380px;
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    gap: 2rem;
-    padding: 2rem 0;
+    gap: 0.8rem;
+    padding: 1rem 0;
+  }
+  .plan h4 {
+    font-size: 18px;
+    margin: 0 auto;
+    line-height: 32.48px;
+  }
+  .plan h2 {
+    font-size: 32px;
   }
   .benefits {
     align-items: center;
+    gap: 0.5rem;
   }
 }

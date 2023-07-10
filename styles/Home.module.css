@@ -1,5 +1,8 @@
 .container {
   padding: 0;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
 }
 
 .main {
@@ -14,15 +17,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-clip: border-box;
-}
-
-.nav {
-  padding: 0.5rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(255, 249, 242, 0.6);
-  backdrop-filter: blur(5px) drop-shadow(0 1px 0 rgba(22, 12, 40, 0.15));
+  max-width: 100%;
 }
 
 .icon {
@@ -30,20 +25,21 @@
 }
 
 .header {
-  margin-top: 7rem;
-  margin-left: 6rem;
+  position: relative;
   width: 49%;
   color: rgba(66, 55, 85, 0.9);
+  left: 10%;
+  top: 12%;
 }
 .header h1 {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 900;
 }
 
 .header h2 {
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .second {
@@ -56,12 +52,12 @@
   color: rgba(66, 55, 85, 0.8);
   font-weight: 500;
   font-size: 20px;
-  line-height: 32px;
+  line-height: 2rem;
 }
 
 .second h2 {
   font-weight: 700;
-  font-size: 32px;
+  font-size: 2rem;
   color: rgba(66, 55, 85, 0.8);
 }
 .proccess {
@@ -84,7 +80,7 @@
 }
 .text {
   text-align: left;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 33px;
 }
@@ -104,7 +100,7 @@
   background-color: rgba(255, 217, 218, 0.1);
 }
 .fifth h2 {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   margin: 0;
   padding-bottom: 0.5rem;
@@ -128,7 +124,7 @@
 }
 .sixth h3 {
   padding-bottom: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
@@ -138,7 +134,7 @@
 }
 
 .seventh h2 {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   color: rgba(66, 55, 85, 1);
 }
@@ -149,33 +145,56 @@
 }
 .swiper {
   display: none;
-  width: 50rem;
+
+  position: relative;
 }
 
 .therapy .talents .header .proccess .about {
   width: 95%;
 }
 @media (max-width: 420px) {
+  .container {
+    width: 100vw;
+  }
+  .container section {
+    padding: 0.5rem 0.5rem;
+  }
   #reading_child {
     display: none;
+    left: 1vw;
+  }
+  #button_top {
+    position: absolute;
+    top: calc(75% + 27px);
+    left: calc(55% - 179px);
+    font-size: 20px;
   }
   .first {
     background-position: 30%;
     height: 100%;
+    margin: 0;
+    background-position-x: 30%;
+    background-position-y: 50%;
+    position: relative;
   }
+  /* .nav {
+    display: none;
+  } */
   .about {
     flex-direction: column;
     align-items: center;
   }
   .header {
-    width: 90%;
+    width: 70%;
     height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    top: 80%;
   }
   .header h1 {
     font-size: 28px;
+    margin-top: 1rem;
   }
   .main h2 {
     font-size: 22px;
@@ -195,8 +214,9 @@
 
   .swiper {
     display: inherit;
-    margin: 2px;
+    margin: 2px 0;
     height: fit-content;
+    overflow: hidden;
   }
   .seventh {
     padding: 1rem 0 2rem 0;

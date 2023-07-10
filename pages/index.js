@@ -6,6 +6,7 @@ import Plans from "../components/Plans";
 import Nav from "../components/Navigation";
 import Steps from "../components/Steps";
 import Swiper from "../components/Swiper";
+import { useState, useEffect } from "react";
 export default function Home() {
   const avilablePlans = [
     {
@@ -49,23 +50,17 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.first}>
-          <div className={styles.nav}>
-            <Image
-              src="/icon_home.svg"
-              alt="Strona główna"
-              height={21}
-              width={24}
-              className={styles.icon}
-            />
-            <Nav />
-          </div>
+          <Nav />
           <div className={styles.header}>
             <div>
               {" "}
               <h1>W każdym dziecku drzemie potencjał</h1>
               <h2>Pozwól mi pomóc go uwolnić</h2>
             </div>
-            <Button text={"Zamów darmową konsultację >>"} id={styles.button} />
+            <Button
+              text={"Zamów darmową konsultację >>"}
+              id={styles.button_top}
+            />
           </div>
         </div>
         <section className={styles.second} id="therapy">
