@@ -12,6 +12,8 @@
     rgba(255, 222, 105, 0.8)
   );
   color: rgba(66, 55, 85, 0.9);
+  position: relative;
+  z-index: 100;
 }
 
 .button:hover {
@@ -25,7 +27,5 @@
     width: 358px;
     position: relative;
     left: calc(50% - 179px);
-
-    /* right: calc(50vw - 45%); */
   }
 }

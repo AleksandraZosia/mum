@@ -6,8 +6,24 @@ import Plans from "../components/Plans";
 import Nav from "../components/Navigation";
 import Steps from "../components/Steps";
 import Swiper from "../components/Swiper";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 export default function Home() {
+  const containerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(null);
+  const whenInView = (entries) => {
+    const [entry] = entries;
+    setIsVisible(entry.isIntersecting);
+  };
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0,
+  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(whenInView, options);
+    if (containerRef.current) observer.observe(containerRef.current);
+  }, [containerRef, options]);
+
   const avilablePlans = [
     {
       name: "POJEDYNCZE SPOTKANIE",
@@ -61,10 +77,14 @@ export default function Home() {
               text={"Zamów darmową konsultację >>"}
               id={styles.button_top}
             />
+            <div className={styles.ellipse_3}></div>
           </div>
+          <div className={styles.ellipse_2}></div>
         </div>
         <section className={styles.second} id="therapy">
+          <div className={styles.ellipse_4}></div>
           <div className={styles.therapy}>
+            <div className={styles.ellipse_5}></div>
             <h2>Terapia</h2>
             <h4>
               Mój główny cel to zapewnienie każdemu dziecku równych szans w
@@ -75,6 +95,7 @@ export default function Home() {
               metody nauki, które będą dla niego najbardziej efektywne i
               atrakcyjne.
             </h4>
+
             <h4>
               Wspieram dziecko w rozwijaniu umiejętności samoorganizacji,
               radzenia sobie z trudnościami w nauce oraz w budowaniu strategii
